@@ -1,5 +1,6 @@
 import 'package:bloc_app/Controllers/switch_example/switch_bloc.dart';
 import 'package:bloc_app/Controllers/switch_example/switch_state.dart';
+import 'package:bloc_app/pages/image_picker_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,6 +12,15 @@ class SwitchExampleScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Example two screen"),
+        actions: [
+          IconButton(
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ImagePickerScreen(),
+                  )),
+              icon: const Icon(Icons.navigate_next))
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
