@@ -1,3 +1,4 @@
+import 'package:bloc_app/Controllers/Data%20list%20bloc/data_list_bloc.dart';
 import 'package:bloc_app/Controllers/Image%20Picker%20Bloc/image_picker_bloc.dart';
 import 'package:bloc_app/Controllers/switch_example/switch_bloc.dart';
 import 'package:bloc_app/pages/counter_screen.dart';
@@ -24,9 +25,13 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ImagePickerBloc(),
+        ),
+        BlocProvider(
+          create: (context) => DataListBloc(),
         )
       ],
       child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Bloc',
         home: CounterScreen(),
       ),
